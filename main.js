@@ -79,7 +79,7 @@ Roadmap: futuras implementações
 // Próximos passos e novidades para o app encriptador de mensagens.
 // Sync design com Figma: [link futuro]
 
-1. Code e design reviews: sempre começar e terminar revisando;
+1. Code e design reviews: sempre começar e terminar revisando.
 
 2. Funções para ativar e desativar botões conforme o usuário interage com o app:
 
@@ -119,5 +119,7 @@ Exemplo2: Textarea para input pode também ter seu contorno em vermelho enquanto
 
 5- Encriptação live: enquanto o usuário digita, se o texto estiver passar pelas validações de caracteres, ele já é encriptado e aparece automaticamente na área input. Para a live, é preciso alterar o esquema de botões. Os botões, que por enquanto fazem click-ação, em live podem ser referentes à modos.
 Exemplo: o btn-codificar + btn-descodificar se tornam um botões para ativar ou desativar cada uma das funções da codificação. Enquanto isso, o texto digitado é automaticamente convertido...
+
+6- Tornar o app responsivo desktop-mobile.
 
 */
