@@ -1,4 +1,4 @@
-/* Default */
+/* Default e estilizaçoões */
 
 * {
     font-family: "Inter", sans-serif;
@@ -10,9 +10,8 @@
 
 body {
     display: flex;
-    flex-direction: column;
-    width: 100% ;
-    height: 100vh;
+    flex-direction:column;
+    justify-content: space-between;
 }
 
 h2 {
@@ -21,76 +20,70 @@ h2 {
     font-size: 18px;
 }
 
+#texto-small {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+
 /* Top */
 
 .div-header{
     display: flex;
-    padding: 0 4rem;
+    padding: 1em 4em;
+    height: 10vh;
+    align-items: center;
 }
     
 #logo {
-    margin: 2rem 4rem;
+    height: 3em;
 }
 
 /* Middle */
 
 .div-main {
+    position: relative;
     display: flex;
     flex-direction: row;
-    height: 78vh;   
-    padding: 0 4rem;
+    height: 70vh;   
+    padding: 0 2em;
 }
 
 .div-left, .div-right {
     display: flex;
     flex-direction: column; 
+    gap: 1em;
     width: 50%;
-    height: auto;
-    padding: 4rem;
+    padding: 2em 4em;
 }
 
 .div-input {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;    
     width: 100%;
-    height: 20rem;
-    min-height: 20rem;
-    max-height: 24rem;
+    height: 16em;
 }
 
 .div-aviso {
     display:flex;
-    align-items: top;
-    width: 100%;
-    height: auto;
     flex-direction: row;
+    align-items: top;
     gap: 0.5em;
     padding: 1em;
 }
 
 .div-aviso img {
-    width: 1rem;
-    height: 1rem;
-}
-
-.texto-instru {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    color: #121212;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: auto;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
 }
 
 .div-btn {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 1rem 0;
-    gap: 1rem;
+    padding: 1em 0;
+    gap: 1em;
 }
 
 
@@ -100,9 +93,7 @@ h2 {
 .div-output {
     display:none;
     flex-direction: column;
-    align-items: flex-start;    
     width: 100%;
-    max-height: 24rem;
 }
 
 #btn-copiar {
@@ -114,16 +105,15 @@ h2 {
     flex-direction: column; 
     align-content:center;
     justify-content: space-between;
-    gap: 1rem;
-    min-height: 20rem;
-    max-height: 24rem;
+    gap: 1em;
 }
 
 #ilustra {
     display: block;
-    height: 22rem;
-    max-height: 24rem;
+    height: 22em;
+    max-height: 16em;
 }
+
 
 /* Bottom */
 
@@ -131,6 +121,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 20vh;
+    gap: 1em;
+    padding: 2em 0 0 1em;
 }
 
 .div-footer p {
@@ -144,14 +137,14 @@ h2 {
     display: flex;   
     flex-direction: row;
     justify-content: center;
-    width: 100%;
-    gap: 2rem;
-    padding: 1rem 0;
+    width: auto;
+    gap: 2em;
+    padding: 1em 0;
 }
 
 svg {
-    width: 32px;
-    height: 32px;
+    width: 2em;
+    height: 2em;
 }
 
 svg:hover {
@@ -160,29 +153,33 @@ svg:hover {
 
 }
 
+
 /* Inputs e outputs */
 
 .input, .output {
-    display: block;
     box-sizing: border-box;
     width: 100%;
-    height: 15rem;
-    padding: 2rem 2rem;
-    border: solid 2px #d8d8d8;
+    height: 16rem;
+    padding: 1.5em 1em;
+    border: solid 2px #0A3871;
     word-wrap: break-word;
+}
+
+
+.input:disabled {
+    border: solid 2px #EFF1FA;
 }
 
 
 /* Botões */ 
 
 #btn-criptografar {
-    display: block;
-    width: 10rem;
-    height: 3.5rem;
-    padding: 0.5rem 1rem;
+    display: inline-block;
+    width: 10em;
+    height: 3.5em;
+    padding: 0.5em 1em;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.02rem;
     color:white;
     background-color: #0A3871;
     border:solid 2px #0A3871;
@@ -196,13 +193,11 @@ svg:hover {
 }
 
 #btn-criptografar:disabled {
-    display: block;
-    width: 10rem;
-    height: 3.5rem;
-    padding: 0.5rem 1rem;
+    width: 10em;
+    height: 3.5em;
+    padding: 0.5em 1em;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.02rem;
     color:white;
     background-color: #EFF1FA;
     border:solid 2px #EFF1FA;
@@ -210,12 +205,13 @@ svg:hover {
 }
 
 #btn-descriptografar {
+    display: inline-block;
     width: 144px;
-    height: 56px;
+    height: 3.5em;
     padding: 1em 1em;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.02em;
     color: #0A3871;
     background-color: white;
     border:solid 2px #0A3871;
@@ -229,13 +225,12 @@ svg:hover {
 }
 
 #btn-criptografar:disabled {
-    display: block;
     width: 10rem;
     height: 3.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.02em;
     color:white;
     background-color: #EFF1FA;
     border:solid 2px #EFF1FA;
@@ -249,8 +244,8 @@ svg:hover {
     border:solid 2px #0A3871;
     padding: 0.5em 1em;
     font-weight: 600;
-    font-size: 14px;
-    letter-spacing: 0.02rem;
+    font-size: 12px;
+    letter-spacing: 0.02em;
     color: #0A3871;
     background-color: white;
     border-radius: 4px;
@@ -261,3 +256,122 @@ svg:hover {
     background-color: #EFF1FA  ;
     border:solid 2px #0A3871;
 }        
+
+
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+
+    * {
+        font-family: "Inter", sans-serif;
+        font-weight:400;
+        font-size: 14px;
+        color: #121212;
+    }
+    
+    h2 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    p {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+
+
+    .div-header {
+        display:flex;
+        height: 10%;
+        justify-content: center;
+        padding: 2em 1em 1em 1em;
+    }
+
+    .div-main {
+        display: flex;
+        flex-direction: column;
+        height: 78%;
+        gap: 1em;
+    }
+
+    .div-left, .div-right{
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    .input, .output, .div-aviso, .div-btn, .div-ilustra, .div-footer  {
+        width: 100%;
+    }
+
+    .div-output {
+        display: none;
+    }
+
+    .input, .output {
+        width: 100%;
+        height: 14em;
+    }
+
+    .div-btn {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #btn-criptografar {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 3.5em;
+        padding: 1em 1em;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.05rem;
+    }
+
+    
+    #btn-descriptografar {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 3.5em;
+        padding: 0.1em 1em;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.05rem;
+    }
+
+    #ilustra {
+        display: none;
+        height: 18vh;
+    }
+
+    .div-ilustra h2, p {
+        text-align: center;
+    }
+
+    .div-footer {
+        height: 6%;
+    }
+
+    .div-icons {
+        align-items: center;
+        height: auto;
+    }
+
+    #texto-small {
+        font-size: 11px;
+        font-weight: 800;
+        padding: 0 2em;
+    }
+
+    svg, path {
+        display:inline-block;
+        scale: 0.9
+    }
+
+}
