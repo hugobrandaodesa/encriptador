@@ -11,7 +11,7 @@
 body {
     display: flex;
     flex-direction:column;
-    justify-content: space-between;
+    height: 100vh;
 }
 
 h2 {
@@ -23,7 +23,7 @@ h2 {
 #texto-small {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* Top */
@@ -64,6 +64,20 @@ h2 {
     height: 16em;
 }
 
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 16rem;
+    padding: 1.5em 1em;
+    border: solid 2px #0A3871;
+    word-wrap: break-word;
+}
+
+
+.input:disabled {
+    border: solid 2px #EFF1FA;
+}
+
 .div-aviso {
     display:flex;
     flex-direction: row;
@@ -94,10 +108,19 @@ h2 {
     display:none;
     flex-direction: column;
     width: 100%;
+    max-width: 666px;
+    word-wrap: break-word;
+}
+
+
+.div-btn-copiar {
+        display: none;
+        justify-content: right;
 }
 
 #btn-copiar {
     display: none;
+    margin: 0;
 }
 
 .div-ilustra {
@@ -121,7 +144,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 20vh;
+    height: 15%;
     gap: 1em;
     padding: 2em 0 0 1em;
 }
@@ -156,26 +179,12 @@ svg:hover {
 
 /* Inputs e outputs */
 
-.input, .output {
-    box-sizing: border-box;
-    width: 100%;
-    height: 16rem;
-    padding: 1.5em 1em;
-    border: solid 2px #0A3871;
-    word-wrap: break-word;
-}
-
-
-.input:disabled {
-    border: solid 2px #EFF1FA;
-}
 
 
 /* Botões */ 
 
 #btn-criptografar {
     display: inline-block;
-    width: 10em;
     height: 3.5em;
     padding: 0.5em 1em;
     font-size: 14px;
@@ -193,7 +202,6 @@ svg:hover {
 }
 
 #btn-criptografar:disabled {
-    width: 10em;
     height: 3.5em;
     padding: 0.5em 1em;
     font-size: 14px;
@@ -206,7 +214,6 @@ svg:hover {
 
 #btn-descriptografar {
     display: inline-block;
-    width: 144px;
     height: 3.5em;
     padding: 1em 1em;
     font-size: 14px;
@@ -225,8 +232,7 @@ svg:hover {
 }
 
 #btn-criptografar:disabled {
-    width: 10rem;
-    height: 3.5rem;
+    height: 3.5em;
     padding: 0.5em 1em;
     font-size: 14px;
     font-weight: 600;
@@ -238,24 +244,18 @@ svg:hover {
 }
 
 #btn-copiar {
-    box-sizing:border-box;
-    width: auto;
-    height: auto;
-    border:solid 2px #0A3871;
-    padding: 0.5em 1em;
+    display: inline-block;
+    margin: 0;
+    padding: 0.4em 1em;
+    font-size: 14px;
     font-weight: 600;
-    font-size: 12px;
     letter-spacing: 0.02em;
+    border:solid 2px #0A3871;
     color: #0A3871;
     background-color: white;
     border-radius: 4px;
 }
-
-#btn-copiar:hover { 
-    color: #0A3871; 
-    background-color: #EFF1FA  ;
-    border:solid 2px #0A3871;
-}        
+   
 
 
 /* Mobile */
@@ -306,12 +306,7 @@ svg:hover {
         width: 100%;
     }
 
-    .div-output {
-        display: none;
-    }
-
     .input, .output {
-        width: 100%;
         height: 14em;
     }
 
