@@ -11,7 +11,8 @@
 body {
     display: flex;
     flex-direction:column;
-    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
 }
 
 h2 {
@@ -23,67 +24,83 @@ h2 {
 #texto-small {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* Top */
 
 .div-header{
     display: flex;
-    padding: 1em 4em;
+    padding: 2rem 8rem;
     height: 10vh;
     align-items: center;
 }
     
-#logo {
-    height: 3em;
-}
 
 /* Middle */
 
 .div-main {
-    position: relative;
     display: flex;
     flex-direction: row;
-    height: 70vh;   
-    padding: 0 2em;
+    gap: 4rem;
+    height: 75vh;   
+    padding: 0 8rem;
 }
 
 .div-left, .div-right {
     display: flex;
     flex-direction: column; 
-    gap: 1em;
+    gap: 1rem;
     width: 50%;
-    padding: 2em 4em;
 }
 
 .div-input {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 16em;
+    height: 16rem;
 }
+
+.input {
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+    height: 16rem;
+    padding: 1.5rem 1rem;
+    border: solid 2px #EFF1FA;
+    word-wrap: break-word;
+}
+
+
+.input:disabled {
+    border: solid 2px #EFF1FA;
+}
+
+.input:focus {
+    border: solid 2px #79a5db;
+}
+
 
 .div-aviso {
     display:flex;
     flex-direction: row;
     align-items: top;
-    gap: 0.5em;
-    padding: 1em;
+    gap: 0.5rem;
+    padding: 1rem;
 }
 
 .div-aviso img {
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
 }
 
 .div-btn {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 1em 0;
-    gap: 1em;
+    padding: 1rem 0;
+    gap: 1rem;
 }
 
 
@@ -94,10 +111,19 @@ h2 {
     display:none;
     flex-direction: column;
     width: 100%;
+    max-width: 666px;
+    word-wrap: break-word;
+}
+
+
+.div-btn-copiar {
+        display: none;
+        justify-content: right;
 }
 
 #btn-copiar {
     display: none;
+    margin: 0;
 }
 
 .div-ilustra {
@@ -105,13 +131,13 @@ h2 {
     flex-direction: column; 
     align-content:center;
     justify-content: space-between;
-    gap: 1em;
+    gap: 1rem;
 }
 
 #ilustra {
     display: block;
-    height: 22em;
-    max-height: 16em;
+    height: 22rem;
+    max-height: 16rem;
 }
 
 
@@ -119,65 +145,68 @@ h2 {
 
 .div-footer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 20vh;
-    gap: 1em;
-    padding: 2em 0 0 1em;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #0A3871;
+    height: 10vh;
+    padding: 4rem 8rem 2rem;
 }
 
-.div-footer p {
+.div-footer p, a {
+    text-decoration: none;
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    color: #121212;
+    color: white;
     font-size: 14px;
 }
 
-.div-icons {
+
+.div-footer #logo {
+    width: 4rem;
+}
+
+.div-icons, .icon {
     display: flex;   
     flex-direction: row;
     justify-content: center;
-    width: auto;
-    gap: 2em;
-    padding: 1em 0;
+    align-items: center;
+    height: 2rem;
+    gap: 2rem;
 }
 
-svg {
-    width: 2em;
-    height: 2em;
-}
-
-svg:hover {
+.icon {
     cursor: pointer;
-    fill: #0A3871;
+}
+
+.div-texto1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+    justify-content: space-between;
+    height: 4.5rem;
 
 }
 
+.div-texto2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: end;
+    height: 4.5rem;
+}
 
 /* Inputs e outputs */
 
-.input, .output {
-    box-sizing: border-box;
-    width: 100%;
-    height: 16rem;
-    padding: 1.5em 1em;
-    border: solid 2px #0A3871;
-    word-wrap: break-word;
-}
-
-
-.input:disabled {
-    border: solid 2px #EFF1FA;
-}
 
 
 /* Botões */ 
 
 #btn-criptografar {
     display: inline-block;
-    width: 10em;
-    height: 3.5em;
-    padding: 0.5em 1em;
+    height: 3.5rem;
+    padding: 0.5rem 1rem;
     font-size: 14px;
     font-weight: 600;
     color:white;
@@ -193,9 +222,8 @@ svg:hover {
 }
 
 #btn-criptografar:disabled {
-    width: 10em;
-    height: 3.5em;
-    padding: 0.5em 1em;
+    height: 3.5rem;
+    padding: 0.5rem 1rem;
     font-size: 14px;
     font-weight: 600;
     color:white;
@@ -206,12 +234,11 @@ svg:hover {
 
 #btn-descriptografar {
     display: inline-block;
-    width: 144px;
-    height: 3.5em;
-    padding: 1em 1em;
+    height: 3.5rem;
+    padding: 1rem 1rem;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02rem;
     color: #0A3871;
     background-color: white;
     border:solid 2px #0A3871;
@@ -225,12 +252,11 @@ svg:hover {
 }
 
 #btn-criptografar:disabled {
-    width: 10rem;
     height: 3.5rem;
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02rem;
     color:white;
     background-color: #EFF1FA;
     border:solid 2px #EFF1FA;
@@ -238,24 +264,18 @@ svg:hover {
 }
 
 #btn-copiar {
-    box-sizing:border-box;
-    width: auto;
-    height: auto;
-    border:solid 2px #0A3871;
-    padding: 0.5em 1em;
+    display: inline-block;
+    margin: 0;
+    padding: 0.4rem 1rem;
+    font-size: 14px;
     font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.02rem;
+    border:solid 2px #0A3871;
     color: #0A3871;
     background-color: white;
     border-radius: 4px;
 }
-
-#btn-copiar:hover { 
-    color: #0A3871; 
-    background-color: #EFF1FA  ;
-    border:solid 2px #0A3871;
-}        
+   
 
 
 /* Mobile */
@@ -269,6 +289,13 @@ svg:hover {
         color: #121212;
     }
     
+    body {
+        display: flex;
+        flex-direction:space-between;
+        height: 100vh;
+        width: 100%;
+    }
+
     h2 {
         font-family: "Inter", sans-serif;
         font-weight: 700;
@@ -285,34 +312,35 @@ svg:hover {
 
     .div-header {
         display:flex;
-        height: 10%;
         justify-content: center;
-        padding: 2em 1em 1em 1em;
+        min-height: 10%;
+        padding: 0rem;
     }
 
     .div-main {
         display: flex;
         flex-direction: column;
-        height: 78%;
-        gap: 1em;
+        min-height: 80%;
+        gap: 2rem;
+        padding: 1rem 1rem 4rem 1rem;
+
     }
 
-    .div-left, .div-right{
-        width: 100%;
-        padding: 1em 0;
-    }
-
-    .input, .output, .div-aviso, .div-btn, .div-ilustra, .div-footer  {
+    .div-left, .div-right {
         width: 100%;
     }
 
-    .div-output {
-        display: none;
+    .input, .output, .div-aviso, .div-btn, .div-ilustra {
+        width: 100%;
     }
 
     .input, .output {
-        width: 100%;
-        height: 14em;
+        height: 14rem;
+    }
+
+    .div-ilustra {
+        border: solid 2px #EFF1FA;
+        padding: 2rem 0;
     }
 
     .div-btn {
@@ -325,11 +353,11 @@ svg:hover {
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 3.5em;
-        padding: 1em 1em;
+        height: 3.5rem;
+        padding: 1rem 1rem;
         font-size: 12px;
         font-weight: 800;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.05rrem;
     }
 
     
@@ -338,11 +366,11 @@ svg:hover {
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 3.5em;
-        padding: 0.1em 1em;
+        height: 3.5rem;
+        padding: 0.1rem 1rem;
         font-size: 12px;
         font-weight: 800;
-        letter-spacing: 0.05rem;
+        letter-spacing: 0.05rrem;
     }
 
     #ilustra {
@@ -355,23 +383,23 @@ svg:hover {
     }
 
     .div-footer {
-        height: 6%;
+        min-height: 10%;
+        padding: 4rem 2rem 1rem;
     }
 
     .div-icons {
-        align-items: center;
-        height: auto;
+        gap: 1rem;
     }
+
+    .div-footer #logo {
+        display:none;
+    }
+
 
     #texto-small {
-        font-size: 11px;
-        font-weight: 800;
-        padding: 0 2em;
+        font-size: 12px;
+        font-weight: 600;
     }
 
-    svg, path {
-        display:inline-block;
-        scale: 0.9
-    }
 
 }

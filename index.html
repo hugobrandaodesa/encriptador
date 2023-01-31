@@ -20,7 +20,7 @@
 
         <div class="div-left">
                     <div class="div-input">
-                        <textarea value="" class="input" rows="10" cols="60" placeholder="Digite o que deseja criptografar"></textarea>
+                        <textarea value="" class="input" rows="10" cols="60" placeholder="Digite o que deseja criptografar" ondblclick="selecionarTexto()"></textarea>
                         <div class="div-aviso">
                             <img src="assets/exclamation.svg">
                             <p>Apenas letras minúsculas e sem acento.</p>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="div-right">
-            <div class="div-ilustra">
+            <div class="div-ilustra">   
                     <img id="ilustra" src="assets/not-found.svg">
                     <h2>Nenhuma mensagem encontrada</h2>
                     <p>Digite um texto que você deseja criptografar ou descriptografar</p>
@@ -43,7 +43,7 @@
                 <p id="texto-small"> Texto criptografado: </h2>
                 <p class="output"></p>
             </div>
-            <div class="div-btn">
+            <div class="div-btn-copiar">
                 <button id="btn-copiar">Copiar</button>
             </div>
                 
@@ -52,34 +52,31 @@
     </div>
 
     <div class="div-footer">
-        <p id="texto-small">Desenvolvido por Hugo Brandão // &#169; Programa ONE - Oracle Next Education por Oracle e Alura</p>
-        <div class="div-icons">
-            <div class="icon">
-                <a href="https://www.behance.net/hugobrandaodesa"target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9.308 6C10.23 6 11.082 6.07 11.864 6.28C12.644 6.42 13.286 6.712 13.856 7.062C14.428 7.414 14.85 7.914 15.138 8.556C15.418 9.196 15.57 9.978 15.57 10.83C15.57 11.822 15.358 12.674 14.858 13.314C14.428 13.954 13.726 14.526 12.864 14.948C14.076 15.3 14.998 15.94 15.56 16.792C16.122 17.644 16.482 18.706 16.482 19.918C16.482 20.91 16.272 21.762 15.912 22.474C15.5529 23.1907 15.014 23.8019 14.348 24.248C13.708 24.678 12.926 25.028 12.074 25.24C11.2394 25.4604 10.3811 25.5786 9.518 25.592L0 25.606V6H9.308ZM8.738 13.956C9.518 13.956 10.158 13.746 10.652 13.386C11.144 13.026 11.362 12.392 11.362 11.612C11.362 11.18 11.292 10.76 11.152 10.478C11.0005 10.1922 10.7806 9.94829 10.512 9.768C10.2219 9.6098 9.91174 9.4914 9.59 9.416C9.238 9.346 8.878 9.346 8.456 9.346H4.34V13.966C4.34 13.956 8.74 13.956 8.74 13.956H8.738ZM8.948 22.342C9.378 22.342 9.8 22.272 10.16 22.202C10.512 22.132 10.872 21.99 11.152 21.77C11.432 21.55 11.652 21.34 11.864 20.99C12.004 20.638 12.144 20.208 12.144 19.708C12.144 18.716 11.864 18.004 11.292 17.504C10.722 17.074 9.94 16.864 9.018 16.864H4.34V22.332H8.95V22.342H8.948ZM22.664 22.272C23.236 22.842 24.086 23.124 25.22 23.124C26 23.124 26.712 22.912 27.284 22.552C27.854 22.122 28.204 21.7 28.344 21.272H31.824C31.252 22.974 30.4 24.186 29.268 24.968C28.136 25.678 26.782 26.1 25.148 26.1C24.1031 26.1046 23.0669 25.9112 22.094 25.53C21.2184 25.2045 20.4372 24.6672 19.82 23.966C19.1617 23.3122 18.6729 22.5076 18.396 21.622C18.046 20.7 17.896 19.708 17.896 18.566C17.896 17.504 18.036 16.502 18.396 15.58C18.756 14.66 19.248 13.876 19.89 13.166C20.53 12.526 21.312 11.954 22.164 11.602C23.114 11.2238 24.1275 11.0303 25.15 11.032C26.362 11.032 27.424 11.242 28.346 11.742C29.266 12.242 29.98 12.806 30.55 13.658C31.12 14.438 31.542 15.36 31.832 16.354C31.972 17.346 32.042 18.346 31.972 19.48H21.672C21.672 20.64 22.092 21.7 22.664 22.272V22.272ZM27.144 14.808C26.644 14.308 25.86 14.026 24.938 14.026C24.298 14.026 23.806 14.166 23.376 14.378C22.946 14.588 22.664 14.878 22.384 15.158C22.1226 15.4325 21.9486 15.7785 21.884 16.152C21.812 16.502 21.744 16.792 21.744 17.072H28.136C27.996 16.02 27.636 15.308 27.142 14.808H27.144ZM20.89 7.352H28.846V9.266H20.89V7.352V7.352Z"/>
-                    </svg>                 
-                </a>
-            </div>
-    
-            <div class="icon">
-                <a href="https://github.com/hugobrandaodesa" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0C7.16 0 0 7.16 0 16C0 23.08 4.58 29.06 10.94 31.18C11.74 31.32 12.04 30.84 12.04 30.42C12.04 30.04 12.02 28.78 12.02 27.44C8 28.18 6.96 26.46 6.64 25.56C6.46 25.1 5.68 23.68 5 23.3C4.44 23 3.64 22.26 4.98 22.24C6.24 22.22 7.14 23.4 7.44 23.88C8.88 26.3 11.18 25.62 12.1 25.2C12.24 24.16 12.66 23.46 13.12 23.06C9.56 22.66 5.84 21.28 5.84 15.16C5.84 13.42 6.46 11.98 7.48 10.86C7.32 10.46 6.76 8.82 7.64 6.62C7.64 6.62 8.98 6.2 12.04 8.26C13.32 7.9 14.68 7.72 16.04 7.72C17.4 7.72 18.76 7.9 20.04 8.26C23.1 6.18 24.44 6.62 24.44 6.62C25.32 8.82 24.76 10.46 24.6 10.86C25.62 11.98 26.24 13.4 26.24 15.16C26.24 21.3 22.5 22.66 18.94 23.06C19.52 23.56 20.02 24.52 20.02 26.02C20.02 28.16 20 29.88 20 30.42C20 30.84 20.3 31.34 21.1 31.18C24.2765 30.108 27.0367 28.0667 28.9921 25.3435C30.9474 22.6203 31.9994 19.3525 32 16C32 7.16 24.84 0 16 0Z"/>
-                    </svg>             
-                </a>
-            </div>
-    
-            <div class="icon">
-                <a href="https://www.linkedin.com/in/hugobrandaodesa/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 2.292C0 1.026 1.052 0 2.35 0H29.65C30.948 0 32 1.026 32 2.292V29.708C32 30.974 30.948 32 29.65 32H2.35C1.052 32 0 30.974 0 29.708V2.292ZM9.886 26.788V12.338H5.084V26.788H9.886ZM7.486 10.364C9.16 10.364 10.202 9.256 10.202 7.868C10.172 6.45 9.162 5.372 7.518 5.372C5.874 5.372 4.8 6.452 4.8 7.868C4.8 9.256 5.842 10.364 7.454 10.364H7.486V10.364ZM17.302 26.788V18.718C17.302 18.286 17.334 17.854 17.462 17.546C17.808 16.684 18.598 15.79 19.926 15.79C21.664 15.79 22.358 17.114 22.358 19.058V26.788H27.16V18.5C27.16 14.06 24.792 11.996 21.632 11.996C19.084 11.996 17.942 13.396 17.302 14.382V14.432H17.27C17.2806 14.4153 17.2913 14.3986 17.302 14.382V12.338H12.502C12.562 13.694 12.502 26.788 12.502 26.788H17.302Z"/>
-                    </svg>
-                </a>
-            </div>
+        <div class="div-texto1">
+            <a href="https://www.oracle.com/br/education/oracle-next-education/" id="texto-small"> &#169; Programa ONE </a>
+            <a href="https://www.alura.com.br/" target="_blank"><p>Alura</p></a>
+            <a href="https://www.oracle.com/" target="_blank"><p>Oracle</p></a>
         </div>
-
+        <img id="logo" src="assets/logo-white.svg">
+        <div class="div-texto2">
+            <div class="div-icons">
+                <div class="icon">
+                    <a href='https://www.behance.net/hugobrandaodesa' target="_blank"><img src="./assets/behance.svg" alt="Hugo B. on Behance"></a>
+                </div>
+                
+                <div class="icon">
+                    <a href='https://github.com/hugobrandaodesa' target="_blank"><img src="./assets/github.svg" alt="Hugo B. on Github"></a>
+                </div>
+                
+                <div class="icon">
+                    <a href='https://www.linkedin.com/in/hugobrandaodesa/' target="_blank"><img src="./assets/linkedin.svg" alt="Hugo B. on LinkedIn"></a>
+                </div>
+            </div>
+            <p>Desenvolvido por Hugo B. <br> </p>
+        </div>
     </div>
+    
+    
     
 
 </body>
