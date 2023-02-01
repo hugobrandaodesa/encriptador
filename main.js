@@ -24,6 +24,14 @@ const btnDescriptografarClick = btnDescriptografar.addEventListener("click", des
 
 // Comment! O desenvolvimento das jornadas e interações poderá ser feito em React. Meu planejamento é, com o passar do tempo, melhorar a qualidade e agilidade no trabalho enquanto aprendo a desenvolver em linguagens mais utilizadas na web (e que, por consequência, vão me possibilitar chegar onde desejo).
 
+
+
+
+function telaReset() {
+    document.querySelector('.input').reset();
+    
+}
+
 function telaInicial() {
 }
 
@@ -36,6 +44,7 @@ function telaTyping() {
 function telaAfterTyping() {
 
 }
+
 
 function selecionarTexto() { 
     input.focus();
@@ -52,49 +61,35 @@ function selecionarTexto() {
 
 function criptografar() {
     var textoDigitado = input.value;
-    for (let i=0; i<textoDigitado.length; i++) {
-        let letra = textoDigitado[i];
-        var regexp = new RegExp(/[a-z]+/g); // Expressão regular para caracteres minúsculos a-z glogal (não retorna nada depois do primeiro match)
-        var n = regexp.test(letra);
-        if(n) {
-            var textoCriptografado = textoDigitado.replace(/a/g, 'ai')
-                                                    .replace(/e/g, 'enter')
-                                                    .replace(/i/g, 'imes')
-                                                    .replace(/o/g, 'ober')
-                                                    .replace(/u/g, 'ufat');
+    let matrizCriptografia = [["a" ,"ai"], ["e" , "enter"], ["i" , "imes"],  ["o" , "ober"], ["u" , "ufat"]];
+    textoDigitado = textoDigitado.toLowerCase();
+    for(let i = 0; i < matrizCriptografia.length; i++) {
+        if(textoDigitado.includes(matrizCriptografia[i][0])) {
+            textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
             output.innerHTML = textoCriptografado;
+            btnCopiar.style.display='inline-block';
             ilustra.style.display='none';
             output.style.display='flex';
-        }else{   
-            telaInicial();
-            return n;
         }
     }
+    return;
 }
 
 
 function descriptografar() {
     var textoDigitado = input.value;
-    for (let i=0; i<textoDigitado.length; i++) {
-        let letra = textoDigitado[i];
-        var regexp = new RegExp(/[a-z]+/g); // Expressão regular para caracteres minúsculos a-z glogal (não retorna nada depois do primeiro match)
-        var n = regexp.test(letra);
-        if(n) {
-            var textoDescriptografado = textoDigitado.replace(/aimes/g, 'a')
-                                                        .replace(/enter/g, 'e')
-                                                        .replace(/imes/g, 'i')
-                                                        .replace(/ober/g, 'o')
-                                                        .replace(/ufat/g, 'u');
-            output.innerHTML = textoDescriptografado;
+    let matrizCriptografia = [["ai" ,"a"], ["enter" , "e"], ["imes" , "i"],  ["ober" , "o"], ["ufat" , "u"]];
+    textoDigitado = textoDigitado.toLowerCase();
+    for(let i = 0; i < matrizCriptografia.length; i++) {
+        if(textoDigitado.includes(matrizCriptografia[i][0])) {
+            textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
             output.innerHTML = textoCriptografado;
+            btnCopiar.style.display='inline-block';
             ilustra.style.display='none';
             output.style.display='flex';
-
-        }else{   
-            telaInicial();
-            return n;
         }
     }
+    return;
 }
 
 
@@ -110,4 +105,4 @@ function copiar() {
 // Content NA! Validação RegEx : https://stackoverflow.com/questions/8694023/allow-only-lowercase-characters
 // Content NA! Função .val() jQuery: https://api.jquery.com/val/#:~:text=The%20.,the%20multiple%20attribute%20set)%2C%20.
 // Content NA! Teste de expressões regulares: https://regex101.com/
-// Extra! Meu post-dúvida no fórum Alura: https://cursos.alura.com.br/forum/topico-como-permito-apenas-caracteres-minusculos-267172
+// Extra! Meu post-dúvida no fórum Alura: https://cursos.alura.com.br/forum/topico-como-permito-apenas-caracteres-minusculos-267172eee7654718dc7dc0e7e3ccb9ee64

@@ -32,7 +32,7 @@ h2 {
 .div-header{
     display: flex;
     padding: 2rem 8rem;
-    height: 10vh;
+    height: 10%;
     align-items: center;
 }
     
@@ -43,7 +43,7 @@ h2 {
     display: flex;
     flex-direction: row;
     gap: 4rem;
-    height: 75vh;   
+    height: 80%;   
     padding: 0 8rem;
 }
 
@@ -115,17 +115,6 @@ h2 {
     word-wrap: break-word;
 }
 
-
-.div-btn-copiar {
-        display: none;
-        justify-content: right;
-}
-
-#btn-copiar {
-    display: none;
-    margin: 0;
-}
-
 .div-ilustra {
     display: flex;
     flex-direction: column; 
@@ -148,8 +137,8 @@ h2 {
     flex-direction: row;
     justify-content: space-between;
     background-color: #0A3871;
-    height: 10vh;
-    padding: 4rem 8rem 2rem;
+    min-height: 5%;
+    padding: 2rem 4rem 2rem;
 }
 
 .div-footer p, a {
@@ -264,7 +253,7 @@ h2 {
 }
 
 #btn-copiar {
-    display: inline-block;
+    display: none;
     margin: 0;
     padding: 0.4rem 1rem;
     font-size: 14px;
@@ -274,6 +263,7 @@ h2 {
     color: #0A3871;
     background-color: white;
     border-radius: 4px;
+    width: fit-content;
 }
    
 
@@ -314,7 +304,11 @@ h2 {
         display:flex;
         justify-content: center;
         min-height: 10%;
-        padding: 0rem;
+        padding: 1rem 0 0 0;
+    }
+
+    #logo {
+        width: 3rem;
     }
 
     .div-main {
@@ -338,26 +332,12 @@ h2 {
         height: 14rem;
     }
 
+    .div-btn {
+        flex-direction: row-reverse;
+    }
     .div-ilustra {
         border: solid 2px #EFF1FA;
         padding: 2rem 0;
-    }
-
-    .div-btn {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-
-    #btn-criptografar {
-        display: block;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 3.5rem;
-        padding: 1rem 1rem;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.05rrem;
     }
 
     
