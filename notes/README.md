@@ -1,4 +1,6 @@
-SOBRE O ENCRIPTADOR APP
+
+
+SOBRE O  APP
 
 Este é um trabalho para o programa ONE Oracle + Alura, onde o desafio se trata de trabalhar em uma aplicação que criptografa textos, permitindo que outras pessoas troquem mensagens secretas sem que saibam o segredo da criptografia utilizada. 
 

@@ -2,13 +2,17 @@
 
 /* Elementos */
 
-const btnCriptografar = document.getElementById("btn-criptografar") // Elemento botão on
-const btnDescriptografar = document.getElementById("btn-descriptografar"); // Elemento botão
-const btnCopiar = document.getElementById("btn-copiar") // Elemento botão
+const btnCriptografar = document.getElementById("btn-criptografar") // Elemento botão de criptografar
+const btnDescriptografar = document.getElementById("btn-descriptografar"); // Elemento botão de descriptografar
+const btnCopiar = document.getElementById("btn-copiar") // Elemento botão de copiar texto
 const input = document.querySelector('.input'); // Elemento input
-const aviso = document.querySelector('.div-aviso'); // Elemento aviso
-const ilustra = document.querySelector('.div-ilustra'); // Elemento ilustração "not found"
-const output = document.querySelector('.div-output'); // Elemento output
+const output = document.querySelector('.output'); // Elemento output
+
+const frameValidation = document.querySelector('.frame-validation'); // Elemento frame da validação
+const frameAsk = document.querySelector('.frame-ask'); // Elemento frame de boas vindas e solicitação de input
+const frameFeedback = document.querySelector('.frame-feedback'); // Elemento frame da imagem svg "not found"
+const frameOutput = document.querySelector('.frame-output'); // Elemento frame do output
+
 var textoDigitado = input.value; // Valores do input
 var textoDescriptografado = output.innerHTML; // Valores do output
 
@@ -25,26 +29,10 @@ const btnDescriptografarClick = btnDescriptografar.addEventListener("click", des
 // Comment! O desenvolvimento das jornadas e interações poderá ser feito em React. Meu planejamento é, com o passar do tempo, melhorar a qualidade e agilidade no trabalho enquanto aprendo a desenvolver em linguagens mais utilizadas na web (e que, por consequência, vão me possibilitar chegar onde desejo).
 
 
-
-
 function telaReset() {
     document.querySelector('.input').reset();
     
 }
-
-function telaInicial() {
-}
-
-
-function telaTyping() {
-
-}
-
-
-function telaAfterTyping() {
-
-}
-
 
 function selecionarTexto() { 
     input.focus();
@@ -67,9 +55,10 @@ function criptografar() {
         if(textoDigitado.includes(matrizCriptografia[i][0])) {
             textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
             output.innerHTML = textoCriptografado;
+            frameOutput.style.display='flex';
+            frameAsk.style.display='none';
+            frameFeedback.style.display='none';
             btnCopiar.style.display='inline-block';
-            ilustra.style.display='none';
-            output.style.display='flex';
         }
     }
     return;
@@ -84,13 +73,16 @@ function descriptografar() {
         if(textoDigitado.includes(matrizCriptografia[i][0])) {
             textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
             output.innerHTML = textoCriptografado;
-            btnCopiar.style.display='inline-block';
-            ilustra.style.display='none';
             output.style.display='flex';
+            frameAsk.style.display='none';
+            frameFeedback.style.display='none';
+            btnCopiar.style.display='inline-block';
         }
     }
     return;
 }
+
+
 
 
 function copiar() {
