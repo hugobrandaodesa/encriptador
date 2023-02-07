@@ -11,15 +11,11 @@ Este é um trabalho para o programa [One](https://www.oracle.com/br/education/or
    - A letra "o" é convertida para "ober"
    - A letra "u" é convertida para "ufat"
 
-Exemplo
 
-| input | output |
-|     :---:      |:---         |
-| "g**a**t**o**"  | "g**ai**t**ober**" |
-| "g**ai**tober"  | "g**a**to" |
+Exemplo de criptografia
 
+"g**a**t**o**"  =  "g**ai**t**ober**"
 
-<br>
 
 2. Requisitos
     - Deve funcionar apenas com letras minúsculas;
@@ -35,11 +31,12 @@ Exemplo
 
 O app é responsivo e foi desenvolvido como desktop-first. Os layouts foram feitos no software Figma e seu desenvolvimento composto por códigos em HTML, CSS e JS puros.
 
-<img src="./other/design-macro" alt="Estrutura layout do e-cript" width="50%">
+<img src="./other/design-macro.png" alt="Estrutura layout do e-cript" width="100%">
 <br>
-<img src="./other/design-interactions.png" alt="Interações do e-cript" width="50%">
+<img src="./other/design-interactions.png" alt="Interações do e-cript" width="100%">
 <br>
-[E-cript on Figma - @hugobrandaodesa](https://bit.ly/ecript-figma-hugobrandaodesa)
+
+[e-cript on Figma](https://bit.ly/ecript-figma-hugobrandaodesa)
 
 
 ## Planning
