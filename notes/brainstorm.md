@@ -1,4 +1,4 @@
-ROADMAP E FUTURO
+## Brainstorm zone
 
 Depois de desenvolvido o raciocínio lógico principal para a encriptação e feito o visual design básico para que o usuário consiga interagir com o app, pensei em algumas features e novidades para tornar o app mais interativo, conciso e bonito.
 

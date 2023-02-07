@@ -7,7 +7,7 @@ h2 {
     color: #121212;
 }
 
-p, ::placeholder, textarea {
+p, textarea {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -21,7 +21,6 @@ p, ::placeholder, textarea {
     color: #121212;
     margin:0;
 }
-
 
 
 #p-small {
@@ -38,6 +37,11 @@ p, ::placeholder, textarea {
     font-size: 14px;
 }
 
+#footer a:hover {
+    text-decoration: underline;
+}
+
+
 #full-page {
     display: flex;
     flex-direction: column;
@@ -50,7 +54,7 @@ p, ::placeholder, textarea {
     display:flex;
     flex-direction: row;
     height: 5%;
-    padding: 2rem 6rem;
+    padding: 3rem 6rem 0;
 }
 
 #main {
@@ -67,15 +71,13 @@ p, ::placeholder, textarea {
     justify-content: space-between;
     background-color: #0A3871;
     height: 5%;
-    padding: 0 6rem;
+    padding: 2rem 6rem 1rem;
 }
 
 textarea.input, .input {
     width: 100%;
     height: 18rem;
     box-sizing: border-box;
-    box-sizing: border-box;
-    box-sizing: border-box; 
     padding: 1.5rem 2rem;
     border-radius: 0.4rem;
     resize: none;
@@ -89,15 +91,16 @@ textarea.input, .input {
 .main-half-1, .main-half-2 {
     display: flex;
     flex-direction: column;  
-    width: 50%;
 }
 
 .main-half-1 {
     padding-right: 2rem;
+    width: 60%;
 }
 
 .main-half-2 {
     padding-left: 2rem;
+    width: 40%;
 }
 
 .frame-input-validation-button, .frame-output-button {
@@ -109,17 +112,19 @@ textarea.input, .input {
 .frame-input-validation, .frame-output {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 2rem;
+    justify-content: flex-start;
+    padding: 3rem 0;
 }
 
 .frame-validation {
     display:flex;
     flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
+    align-items: top;
+    gap: 1rem;
+    padding: 1rem 0 0 1rem;
 }
+
+
 
 .frame-button-1, .frame-texto {
     display: flex;
@@ -151,20 +156,16 @@ textarea.input, .input {
 
 .frame-ask, .frame-output{
     display: none;
-}
-
-.frame-output {
-    padding: 0rem 3rem 2rem 3rem;
-    background-color: white;
+    padding: 0 
 }
 
 .output {
-    padding-top: 2rem;
+    padding: 3rem 0 2rem 0;
 }
 
 
 .frame-button-2 {
-    padding: 0 3rem 0 3rem;
+    padding: 0;
 
 }
 
@@ -292,32 +293,44 @@ textarea.input, .input {
 
 @media screen and (max-width: 480px) {
 
-    p {
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p, textarea {
+        font-size: 0.9rem;
         line-height: 1.2rem;
     }
 
+    ::placeholder {
+        font-size: 0.9rem;
+    }
+
+
     #full-page {
-        height: 100%;
-        width: 100%;
+        height: 80rem;
+        width: 100vw;
+        padding: 0;
     }
 
 
     #header {
         justify-content: center;
+        align-items: center;
         height: 5%;
+        padding: 0.5rem;
     }
 
+
     #main {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        padding: 1rem 2rem 6rem 2rem;
-        height: 80%;
-        gap: 2rem;
+        justify-content: flex-start;
+        padding: 0 1rem;
     }
 
     textarea.input {
         height: 14rem;
+        padding: 1.5rem 1rem;
     }
 
     .main-half-1, .main-half-2 {
@@ -334,12 +347,23 @@ textarea.input, .input {
     }
 
     .frame-button-2 {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
 
-    .frame-input-validation {
-        
-        padding-bottom: 0.5rem; 
+    .frame-input-validation {   
+        padding: 1rem 0;
+    }
+
+    .frame-validation {
+        gap: 0.6rem;
+    }
+
+
+    .frame-validation svg {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        padding: 0.1rem;
     }
 
     .frame-button-1 {
@@ -353,19 +377,13 @@ textarea.input, .input {
         border-radius: 1rem;
     }
 
-    .frame-validation svg {
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        
-    }
-
     .frame-feedback, .frame-ask, .frame-output {
-        padding: 2rem;
+        padding: 1rem;
         width: auto;
     }
 
     .frame-feedback {
+        padding: 2rem 1rem;
         flex-direction: column-reverse;
     }
 
@@ -375,8 +393,10 @@ textarea.input, .input {
         gap: 1rem;
     }
 
-    .frame-output {
+
+    .output {
         height: 100%;
+        padding: 2rem 0 0 0;
     }
 
     #footer {
@@ -386,7 +406,7 @@ textarea.input, .input {
         background-color: #0A3871;
         height: 10%;
         padding: 3rem 2rem 1rem;
-        gap: 6rem
+        gap: 0
     }
 
     .footer-half-1, .footer-half-2 {

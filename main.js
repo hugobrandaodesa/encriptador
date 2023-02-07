@@ -39,6 +39,12 @@ function selecionarTexto() {
     input.select();
 }  
 
+function telaAfterCriptografia() {
+    frameOutput.style.display='flex';
+    frameFeedback.style.display='none';
+    btnCopiar.style.display='inline-block';
+}
+
 
 
 /* Funções criptografar, descriptografar e copiar clipboard */
@@ -55,10 +61,7 @@ function criptografar() {
         if(textoDigitado.includes(matrizCriptografia[i][0])) {
             textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
             output.innerHTML = textoCriptografado;
-            frameOutput.style.display='flex';
-            frameAsk.style.display='none';
-            frameFeedback.style.display='none';
-            btnCopiar.style.display='inline-block';
+            telaAfterCriptografia()
         }
     }
     return;
@@ -67,16 +70,12 @@ function criptografar() {
 
 function descriptografar() {
     var textoDigitado = input.value;
-    let matrizCriptografia = [["ai" ,"a"], ["enter" , "e"], ["imes" , "i"],  ["ober" , "o"], ["ufat" , "u"]];
-    textoDigitado = textoDigitado.toLowerCase();
+    let matrizCriptografia = [["ai" ,"a"], ["enter" , "e"], ["imes" , "i"],  ["ober" , "o"], ["ufat" , "u"]];    textoDigitado = textoDigitado.toLowerCase();
     for(let i = 0; i < matrizCriptografia.length; i++) {
         if(textoDigitado.includes(matrizCriptografia[i][0])) {
             textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
             output.innerHTML = textoCriptografado;
-            output.style.display='flex';
-            frameAsk.style.display='none';
-            frameFeedback.style.display='none';
-            btnCopiar.style.display='inline-block';
+            telaAfterCriptografia()
         }
     }
     return;

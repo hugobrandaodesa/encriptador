@@ -44,4 +44,3 @@ Dias e tarefas
 3. Layout responsivo para desktop;
 4. First patch 0.0.1;
 
-
