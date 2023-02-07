@@ -50,7 +50,7 @@ p, ::placeholder, textarea {
     display:flex;
     flex-direction: row;
     height: 5%;
-    padding: 1rem 4rem;
+    padding: 2rem 6rem;
 }
 
 #main {
@@ -58,7 +58,7 @@ p, ::placeholder, textarea {
     flex-direction: row;
     justify-content: center;
     height: 90%;
-    padding: 1rem 2rem;
+    padding: 0 6rem;
 } 
 
 #footer {
@@ -67,7 +67,7 @@ p, ::placeholder, textarea {
     justify-content: space-between;
     background-color: #0A3871;
     height: 5%;
-    padding: 1rem 4rem;
+    padding: 0 6rem;
 }
 
 textarea.input, .input {
@@ -259,15 +259,21 @@ textarea.input, .input {
 #btn-copiar {
     display: none;
     margin: 0;
-    padding: 0.4rem 1rem;
+    padding: 0.6rem 1rem;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.02rem;
     border:solid 1px #0A3871;
     color: #0A3871;
     background-color: white;
-    border-radius: 1.5rem;
+    border-radius: 0.7rem;
     width: fit-content;
+}
+
+#btn-copiar:hover {
+    color: #0A3871;
+    background-color: #EFF1FA;
+    border:solid 0.12rem #0A3871;
 }
    
 
@@ -388,10 +394,6 @@ textarea.input, .input {
         justify-content: space-between;
         align-items: flex-start;
         gap: 1rem;
-    }
-
-    .footer-half-1 {
-        padding-top
     }
 
     .footer-half-2 {
