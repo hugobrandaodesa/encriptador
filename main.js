@@ -13,9 +13,6 @@ const frameAsk = document.querySelector('.frame-ask'); // Elemento frame de boas
 const frameFeedback = document.querySelector('.frame-feedback'); // Elemento frame da imagem svg "not found"
 const frameOutput = document.querySelector('.frame-output'); // Elemento frame do output
 
-var textoDigitado = input.value; // Valores do input
-var textoDescriptografado = output.innerHTML; // Valores do output
-
 
 /* Eventos */
 
@@ -47,6 +44,14 @@ function telaAfterCriptografia() {
 
 
 
+/* Validação */
+
+var especial = /[`!@#$%^&*()_+\-=\[\]{};':"+\\|,<>\/?~]/;
+var maiusculo = /[A-Z]/;
+var numeros = /[0-9]/;
+
+
+
 /* Funções criptografar, descriptografar e copiar clipboard */
 
 // Content! Replace e glogal flag /g: https://www.javascripttutorial.net/javascript-string-replace/
@@ -55,34 +60,31 @@ function telaAfterCriptografia() {
 
 function criptografar() {
     var textoDigitado = input.value;
-    let matrizCriptografia = [["a" ,"ai"], ["e" , "enter"], ["i" , "imes"],  ["o" , "ober"], ["u" , "ufat"]];
-    textoDigitado = textoDigitado.toLowerCase();
-    for(let i = 0; i < matrizCriptografia.length; i++) {
-        if(textoDigitado.includes(matrizCriptografia[i][0])) {
-            textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
-            output.innerHTML = textoCriptografado;
-            telaAfterCriptografia()
-        }
+    var textoCriptografado = ''; 
+    /[a-z]/gm.test(textoDigitado);
+    if ((especial.test(textoDigitado)) || (maiusculo.test(textoDigitado)) || (numeros.test(textoDigitado))){
+        alert('Por favor, digite apenas letras minúsculas. :)');
+    }else {
+        textoCriptografado = textoDigitado.replaceAll(/e/g, "enter").replaceAll(/i/g, "imes").replaceAll(/a/g, "ai").replaceAll(/o/g, "ober").replaceAll(/u/g, "ufat");
+        output.innerHTML = textoCriptografado;
+        telaAfterCriptografia();
+        console.log(textoCriptografado);    
     }
-    return;
 }
-
 
 function descriptografar() {
     var textoDigitado = input.value;
-    let matrizCriptografia = [["ai" ,"a"], ["enter" , "e"], ["imes" , "i"],  ["ober" , "o"], ["ufat" , "u"]];    textoDigitado = textoDigitado.toLowerCase();
-    for(let i = 0; i < matrizCriptografia.length; i++) {
-        if(textoDigitado.includes(matrizCriptografia[i][0])) {
-            textoCriptografado = textoDigitado.replaceAll(matrizCriptografia[i][0], matrizCriptografia[i][1]);
-            output.innerHTML = textoCriptografado;
-            telaAfterCriptografia()
-        }
+    var textoDescriptografado = ''; 
+    /[a-z]/gm.test(textoDigitado);
+    if ((especial.test(textoDigitado)) || (maiusculo.test(textoDigitado)) || (numeros.test(textoDigitado))){
+        alert('Por favor, digite apenas letras minúsculas. :)');
+    }else {
+        textoDescriptografado = textoDigitado.replaceAll(/enter/g, "e").replaceAll(/imes/g, "i").replaceAll(/ai/g, "a").replaceAll(/o/g, "ober").replaceAll(/ufat/g, "u");
+        output.innerHTML = textoDescriptografado;
+        telaAfterCriptografia();
+        console.log(textoDescriptografado);    
     }
-    return;
 }
-
-
-
 
 function copiar() {
     var textoDescriptografado = output.innerHTML;
