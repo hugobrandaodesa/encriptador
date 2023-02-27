@@ -95,17 +95,20 @@ textarea.input, .input {
 
 .main-half-1 {
     padding-right: 2rem;
-    width: 60%;
+    padding-bottom: 4rem;
+    width: 65%;
 }
 
 .main-half-2 {
     padding-left: 2rem;
-    width: 40%;
+    padding-bottom: 4rem;
+    width: 35%;
 }
 
 .frame-input-validation-button, .frame-output-button {
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
 
 }
 
@@ -114,6 +117,7 @@ textarea.input, .input {
     flex-direction: column;
     justify-content: flex-start;
     padding: 3rem 0;
+    height: 70%;
 }
 
 .frame-validation {
@@ -143,15 +147,15 @@ textarea.input, .input {
     text-align: center;
 }
 
-.frame-feedback, .frame-ask {
+.frame-feedback, .frame-ask, .frame-output-button {
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding: 0rem 3rem 2rem 3rem;
+    padding: 2rem 3rem 2rem 3rem;
     background-color: white;
     filter: drop-shadow(0 0 0.75rem #f0f0f0);
     border-radius: 1.5rem;
-    height: 70%;
+    height: 100%;
 }
 
 .frame-ask, .frame-output{
@@ -165,6 +169,7 @@ textarea.input, .input {
 
 
 .frame-button-2 {
+    width: 100%;
     padding: 0;
 
 }
@@ -259,16 +264,16 @@ textarea.input, .input {
 
 #btn-copiar {
     display: none;
-    margin: 0;
-    padding: 0.6rem 1rem;
+    width: 100%;
+    text-align: center;
+    height: 3.5rem;
+    padding: 0.5rem 2rem;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.02rem;
-    border:solid 1px #0A3871;
     color: #0A3871;
     background-color: white;
-    border-radius: 0.7rem;
-    width: fit-content;
+    border:solid 0.12rem #0A3871;
+    border-radius: 1.5rem;
 }
 
 #btn-copiar:hover {
